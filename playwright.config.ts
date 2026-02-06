@@ -26,8 +26,9 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-     baseURL: 'https://demoqa.com/',
+     baseURL: 'https://bancocs.com/',
      screenshot: 'only-on-failure',
+     video: 'on-first-retry',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -71,8 +72,7 @@ export default defineConfig({
         channel: 'chrome', 
         viewport: null, 
         launchOptions: {
-            args:["--start-maximized"],
-            slowMo:1500
+            args:["--start-maximized"]
         },
       },
      },
