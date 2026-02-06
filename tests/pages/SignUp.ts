@@ -1,7 +1,7 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
 
-export class RegistroPage extends BasePage{
+export class SignUp extends BasePage{
     readonly inputFirstName: Locator;
     readonly inputLastName: Locator;
     readonly inputDocumentNumber;
@@ -36,9 +36,5 @@ export class RegistroPage extends BasePage{
         await this.inputUsername.fill(username);
         await this.inputPassword.fill(password);
         await this.buttonSubmit.click();
-    }
-
-    async checkObligatorieField(locator: Locator){
-        await expect(locator).toHaveJSProperty('validity.valid', false); 
     }
 }
